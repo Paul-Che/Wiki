@@ -1,0 +1,27 @@
+<div class="container">
+  <% @articles.each do |article| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="article_box">
+        <h2><%= article.title %></h2>
+        <div class="article-body text-justify">
+          <p><%= article.content %></p>
+        </div>
+        <ul>
+          <li><%= link_to article_path(article) do %>
+              <i class="fa fa-eye"></i> Show
+              <% end %>
+          </li>
+          <li><%= link_to article_path(article),
+                method: :delete,
+                data: { confirm: "Are you sure?" } do %>
+                <i class="fa fa-trash"></i>
+                <% end %>
+          </li>
+          <li><%= link_to "Edit article", edit_article_path(article) %></li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+

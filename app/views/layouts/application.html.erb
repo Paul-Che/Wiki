@@ -5,9 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,900' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
+<div class="banner">
+  <ul>
+    <li><h1>Wiki</h1></li>
+    <li><h2><%= link_to "Add article", new_article_path %></h2></li>
+  </ul>
+</div>
 <%= yield %>
 
 </body>
